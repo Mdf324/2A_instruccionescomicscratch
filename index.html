@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Scratch: Cómic Interactivo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #ff6b6b;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            color: #4ecdc4;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #ffd93d;
+        }
+
+        h2 {
+            color: #6c5ce7;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .week {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .day {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #a29bfe;
+        }
+
+        .badge {
+            background: #fd79a8;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        li:before {
+            content: "✨";
+            margin-right: 10px;
+        }
+
+        .code-block {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffeaa7 0%, #ffeaa7 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.3em;
+            background-position: 0 88%;
+        }
+
+        .example {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .resource-item {
+            background: #74b9ff;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-5px);
+            background: #0984e3;
+        }
+
+        @media (max-width: 768px) {
+            .week {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Proyecto Scratch: Cómic Interactivo</h1>
+            <p class="subtitle">Crea tu propia historieta digital con animaciones y sonidos</p>
+            <p><strong>Duración:</strong> 2 semanas | <strong>Tiempo:</strong> 8 horas totales</p>
+        </div>
+
+        <div class="card">
+            <h2>📖 ¿Qué vamos a crear?</h2>
+            <p>Vamos a diseñar un cómic interactivo de <span class="highlight">4-6 viñetas</span> donde el lector podrá avanzar haciendo clic. Incluirá:</p>
+            <ul>
+                <li>Personajes con animaciones simples</li>
+                <li>Diálogos entre personajes</li>
+                <li>Cambios de escenario</li>
+                <li>Efectos de sonido y música</li>
+                <li>Un botón para avanzar la historia</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Objetivos de Aprendizaje</h2>
+            <div class="resources">
+                <div class="resource-item">Uso de mensajes</div>
+                <div class="resource-item">Programación de diálogos</div>
+                <div class="resource-item">Animaciones básicas</div>
+                <div class="resource-item">Control de flujo</div>
+                <div class="resource-item">Diseño de interfaces</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📅 Plan de Trabajo - Semana 1</h2>
+            <div class="week">
+                <div class="day">
+                    <span class="badge">Día 1 - 2 horas</span>
+                    <h3>🧩 Diseño y Planificación</h3>
+                    <ul>
+                        <li>Elegir el tema de tu historia</li>
+                        <li>Crear el guión de 4-6 viñetas</li>
+                        <li>Diseñar personajes principales</li>
+                        <li>Crear los fondos para cada viñeta</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Ejemplo de guión:</strong><br>
+                        Viñeta 1: Presentación del personaje<br>
+                        Viñeta 2: Aparece el conflicto<br>
+                        Viñeta 3: Diálogo importante<br>
+                        Viñeta 4: Resolución final
+                    </div>
+                </div>
+
+                <div class="day">
+                    <span class="badge">Día 2 - 2 horas</span>
+                    <h3>👾 Creación de Personajes</h3>
+                    <ul>
+                        <li>Dibujar o elegir sprites</li>
+                        <li>Programar visibilidad básica</li>
+                        <li>Posicionar personajes en escena</li>
+                        <li>Crear botón "Siguiente"</li>
+                    </ul>
+                    <div class="code-block">
+// Código para mostrar/ocultar personajes<br>
+al recibir [Viñeta 1 v]<br>
+&nbsp;&nbsp;mostrar<br>
+&nbsp;&nbsp;ir a x: (-100) y: (0)<br><br>
+al recibir [Viñeta 2 v]<br>
+&nbsp;&nbsp;ocultar
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📅 Plan de Trabajo - Semana 2</h2>
+            <div class="week">
+                <div class="day">
+                    <span class="badge">Día 3 - 2 horas</span>
+                    <h3>💬 Diálogos y Transiciones</h3>
+                    <ul>
+                        <li>Programar conversaciones</li>
+                        <li>Sincronizar diálogos con mensajes</li>
+                        <li>Configurar botón de avance</li>
+                        <li>Probar la navegación</li>
+                    </ul>
+                    <div class="code-block">
+// Diálogo coordinado entre personajes<br>
+al recibir [Escena 3 v]<br>
+&nbsp;&nbsp;decir [¡Hola! ¿Cómo estás?] por (2) segundos<br>
+&nbsp;&nbsp;enviar [Personaje 2 responde v]
+                    </div>
+                </div>
+
+                <div class="day">
+                    <span class="badge">Día 4 - 2 horas</span>
+                    <h3>🎵 Animaciones y Sonido</h3>
+                    <ul>
+                        <li>Agregar efectos de movimiento</li>
+                        <li>Incluir música de fondo</li>
+                        <li>Añadir efectos de sonido</li>
+                        <li>Pulir y probar el proyecto</li>
+                    </ul>
+                    <div class="code-block">
+// Animación simple de entrada<br>
+al recibir [Entrar escena v]<br>
+&nbsp;&nbsp;mostrar<br>
+&nbsp;&nbsp;deslizar en (1) segs a x: (0) y: (0)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 Ideas para tu Historia</h2>
+            <div class="resources">
+                <div class="resource-item">El día que mi mascota habló</div>
+                <div class="resource-item">El misterio del objeto perdido</div>
+                <div class="resource-item">Una aventura en el espacio</div>
+                <div class="resource-item">Un descubrimiento mágico</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚀 Retos Opcionales</h2>
+            <p>Si terminas antes, intenta agregar:</p>
+            <ul>
+                <li>Múltiples finales según elecciones del usuario</li>
+                <li>Grabar tus propias voces para los diálogos</li>
+                <li>Efectos visuales (cambios de color, tamaños)</li>
+                <li>Mini-juego integrado en una viñeta</li>
+                <li>Créditos finales con música</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>✅ Checklist de Entrega</h2>
+            <ul>
+                <li>✅ Historia completa de 4-6 viñetas</li>
+                <li>✅ Personajes que se mueven y hablan</li>
+                <li>✅ Botón funcional para avanzar</li>
+                <li>✅ Diálogos coordinados</li>
+                <li>✅ Al menos 2 efectos de sonido</li>
+                <li>✅ Transiciones fluidas entre viñetas</li>
+                <li>✅ Proyecto probado y sin errores</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
